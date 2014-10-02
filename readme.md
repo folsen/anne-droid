@@ -81,18 +81,18 @@ parse into.
 Let's add the `Tip` command.
 
     data Command = Help
-                 | Tip Text Int
+                 | Tip String Int
                  | CommandNotFound
                  deriving (Show)
 
-Here I added the `Tip` type, which takes two parameters, some `Text` and
-an `Int`. The `Text` here is meant to be the username, we could have
+Here I added the `Tip` type, which takes two parameters, some `String` and
+an `Int`. The `String` here is meant to be the username, we could have
 created a username type as well somewhere else to make this clear but I
 thought that was a bit excessive for this case. The `Int` will store our
 tip amount.
 
 Now that I have my `Tip` command I want to write a parser for that command so
-I can turn it from Text into an actual Haskell data representation. So I add a
+I can turn it from `String` into an actual Haskell data representation. So I add a
 parser function that looks something like this.
 
     parseTipCommand :: CommandParser
@@ -131,7 +131,7 @@ like this.
       ]
 
 So we simply add our `parseTipCommand` to the list.
-
+http://hackage.haskell.org/package/parsec-3.1.7/docs/Text-Parsec-Combinator.html
     commandParser :: CommandParser
     commandParser = choice
       [ parseHelpCommand
@@ -139,7 +139,7 @@ So we simply add our `parseTipCommand` to the list.
       ]
 
 (**Break**) How do I write a parser?
-
+OmarIsuf
 We're using the Parsec library to write our parsers, it's a very popular
 but also very big and powerful library to write parsers in. It can do
 pretty much anything but it can also be slightly daunting. Parsec is
