@@ -21,8 +21,7 @@ data SlackRequest = SlackRequest Command SlackData
 
 -- | The auxilliary data coming in from slack.
 data SlackData = SlackData
-  { token       :: Text -- ^ API Token for Outgoing Webhook
-  , teamId      :: Text -- ^ ID for the `team` this is being sent from
+  { teamId      :: Text -- ^ ID for the `team` this is being sent from
   , channelId   :: Text -- ^ ID for the channel this is being sent from
   , channelName :: Text -- ^ Name for the channel this is being sent from
   , timestamp   :: Text -- ^ Unix timestamp for message
