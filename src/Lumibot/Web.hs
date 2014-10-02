@@ -4,7 +4,6 @@
 module Lumibot.Web where
 
 import Data.Aeson (object, (.=))
-import Data.Text.Lazy (unpack)
 import Control.Monad.Trans
 import Network.HTTP.Types
 import Web.Scotty
