@@ -5,6 +5,7 @@ module Lumibot.Commands where
 import System.Random
 import Data.Text.Lazy (Text, unpack)
 import Data.Aeson
+import Data.Monoid (mconcat)
 import Web.Scotty (Parsable, parseParam)
 
 import Text.Parsec
@@ -67,8 +68,11 @@ handler :: SlackRequest -> IO SlackResponse
 
 -- | Handler for the Help command. Just print out what commands we have
 -- available, this text needs to be updated as we expand.
-handler (SlackRequest Help _) = return $
-  SuccessResponse "This is the help message"
+handler (SlackRequest Help _) =
+  return . SuccessResponse $ mconcat
+  [ "There are currently no commands available :("
+  , "Go add some in the github repo"
+  ]
 
 -- | This functions handles the CommandNotFound by creating a random number (an
 -- IO action) and picking an item from the funnyFails list. This is not very
