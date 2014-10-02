@@ -131,7 +131,7 @@ like this.
       ]
 
 So we simply add our `parseTipCommand` to the list.
-http://hackage.haskell.org/package/parsec-3.1.7/docs/Text-Parsec-Combinator.html
+
     commandParser :: CommandParser
     commandParser = choice
       [ parseHelpCommand
@@ -139,7 +139,7 @@ http://hackage.haskell.org/package/parsec-3.1.7/docs/Text-Parsec-Combinator.html
       ]
 
 (**Break**) How do I write a parser?
-OmarIsuf
+
 We're using the Parsec library to write our parsers, it's a very popular
 but also very big and powerful library to write parsers in. It can do
 pretty much anything but it can also be slightly daunting. Parsec is
