@@ -1,0 +1,6 @@
+{
+  "name": "Anne Droid",
+  "description": "Slack bot for Haskell learning",
+  "repository": "https://github.com/folsen/anne-droid",
+  "keywords": ["haskell", "scotty", "slack"]
+}

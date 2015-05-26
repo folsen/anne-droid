@@ -1,23 +1,31 @@
 Anne Droid - the helpful little bot that could
 ===
 
+The aim of this project is to provide a sample application that can
+serve as a centre for experimentation in learning Haskell.
+
+Writing a chat bot can be fun and challenging and the potential
+challenges involved are endless. At the simplest, you can simply match a
+verbatim string and return a result, but the complexity can range all
+the way to kicking off an EC2 cluster to do protein folding if you so
+wish.
+
 Slack enables integration in a couple of different ways, there's
 webhooks, both outgoing and ingoing, the outgoing ones send data from
-Slack on a specific trigger word and allow response by responding to the
-outgoing HTTP POST request. The incoming webhooks allow you to send data
-into slack without any prompt from Slack itself to do so (useful for
-services that monitor something else or just send regular updates into
-slack or something). There is a slack API that is used for acting on
+Slack on a specific trigger word and allow response by responding to
+the outgoing HTTP POST request. The incoming webhooks allow you to
+send data into slack without any prompt from Slack itself to do so
+(useful for services that monitor something else or just send regular
+updates into slack). There is a slack API that is used for acting on
 behalf of a single user, i.e. there is a per-user authentication token
 and it allows you to send messages as that user etc. Finally there are
-`Slash commands` that seem to be somewhere in between webhooks and a full
-API integration, i'm not exactly sure what makes them differ from
+`Slash commands` that seem to be somewhere in between webhooks and a
+full API integration, i'm not exactly sure what makes them differ from
 webhooks.
 
 This bot has been set up to handle integration with webhooks, for
 starters it handles outgoing webhooks but it is trivial to make it
 handle incoming webhooks as well.
-
 
 Building
 ---
@@ -45,6 +53,14 @@ imported so you can for instance do something like
 
 to get a web server running in the REPL so that you can easily `ctrl-c`
 out of it and `:r` to reload our code.
+
+Deploying
+---
+
+This project is set up to be deployed to heroku with the
+[haskell-on-heroku](https://haskellonheroku.com/) build pack.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/folsen/anne-droid)
 
 Contributing
 ---
