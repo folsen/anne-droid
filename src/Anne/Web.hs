@@ -1,14 +1,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE RecordWildCards #-}
 
-module Lumibot.Web where
+module Anne.Web where
 
 import Data.Aeson (object, (.=))
 import Control.Monad.Trans
 import Network.HTTP.Types
 import Web.Scotty
 
-import Lumibot.Commands
+import Anne.Commands
 
 -- | The configuration parameters we want for our webserver.
 data WebConfig = WebConfig

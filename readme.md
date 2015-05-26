@@ -1,4 +1,4 @@
-Lumibot - the helpful little bot that could (maybe)
+Anne Droid - the helpful little bot that could
 ===
 
 Slack enables integration in a couple of different ways, there's

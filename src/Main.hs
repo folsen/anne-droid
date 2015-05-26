@@ -2,10 +2,10 @@ module Main where
 
 import Options.Applicative
 
-import Lumibot.Web
+import Anne.Web
 
 -- | Define what options we want and in which order to feed the results of
--- those arguments into the WebConfig type which we get from Lumibot.Web
+-- those arguments into the WebConfig type which we get from Anne.Web
 webConfig :: Parser WebConfig
 webConfig = WebConfig
   <$> strOption
@@ -24,7 +24,7 @@ main :: IO ()
 main = execParser opts >>= web where
   opts = info (helper <*> webConfig)
     ( fullDesc
-   <> progDesc ( "Start a webserver for Lumibot, to be" <>
+   <> progDesc ( "Start a webserver for Anne, to be" <>
                  "used with Outgoing Webhooks in Slack" )
-   <> header "lumibot - a slack bot for luminal" )
+   <> header "anne - a slack bot for learning Haskell" )
 

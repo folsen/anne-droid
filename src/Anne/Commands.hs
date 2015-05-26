@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE RecordWildCards #-}
 
-module Lumibot.Commands where
+module Anne.Commands where
 
 import System.Random
 import Data.Aeson
@@ -48,7 +48,7 @@ commandParser = choice
   ]
 
 -- | A parser for the Help command.
--- This command is used by writing `@lumibot help` so we just want to
+-- This command is used by writing `@anne help` so we just want to
 -- parse that the word help is there (and first in the message), it can
 -- optionally be followed something else after at least 1 space. This
 -- allows us to parse any further commands after should we want to in the
@@ -85,8 +85,8 @@ handler (SlackRequest CommandNotFound _) = do
 -- doesn't exist.
 funnyFails :: [String]
 funnyFails =
-  [ "Sorry, I don't know that command. Try `@lumibot help`"
-  , "Hmm.. not sure what you're talking about. Try `@lumibot help`?"
+  [ "Sorry, I don't know that command. Try `@anne help`"
+  , "Hmm.. not sure what you're talking about. Try `@anne help`?"
   ]
 
 --------------------------------------------------------------------------------
