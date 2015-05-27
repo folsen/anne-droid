@@ -29,11 +29,21 @@ handle incoming webhooks as well.
 
 Building
 ---
+This is a standard Haskell application, nothing fancy.
 
-This is a standard Haskell application, nothing fancy. I will assume
-that you have GHC and Cabal installed. There are "relatively" few
-dependencies to the project, I've kept them low within the bounds of
-what is convenient.
+There are two approaches to building this application, through the
+traditional cabal ways and through Halcyon.
+
+If you're using Halcyon, you can install Halcyon with
+
+    eval "$( curl -sL https://github.com/mietek/halcyon/raw/master/setup.sh )"
+
+after which you can simply run `halcyon install` in the root directory.
+
+If you want to use pure GHC and Cabal (would probably be better for a
+learning environment), you have to have GHC and Cabal installed. There
+are relatively few dependencies to the project, I've kept them low
+within the bounds of what is convenient.
 
 To install the project you should
 
@@ -62,7 +72,7 @@ This project is set up to be deployed to heroku with the
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/folsen/anne-droid)
 
-Contributing
+Extending
 ---
 
 The main purpose of this bot is of course to have commands that are
@@ -79,7 +89,7 @@ three parts to this command, the command itself, `tip` who it's going to
 and the amount. So we'll see how we get all these three parts into our
 command handler later.
 
-The first thing you want to do is go to `src/Lumibot/Commands.hs`, this
+The first thing you want to do is go to `src/Anne/Commands.hs`, this
 is where all the command work will take place.
 
 Go find the definition of `Command`, as of this writing it looks like
@@ -158,9 +168,9 @@ So we simply add our `parseTipCommand` to the list.
 
 We're using the Parsec library to write our parsers, it's a very popular
 but also very big and powerful library to write parsers in. It can do
-pretty much anything but it can also be slightly daunting. Parsec is
-what we use to parse Ludwig, so if you learn Parsec here, you'll know
-how to write the Parser for Ludwig as well.
+pretty much anything but it can also be slightly daunting. On the
+upside, writing parsers can be a lot of fun and will likely come in
+handy in a lot of other environments in the future.
 
 The main package site is [here](http://hackage.haskell.org/package/parsec). But
 by default in `Commands.hs` we only include `Text.Parsec` and
@@ -197,8 +207,8 @@ As you can see, the pattern-match part of it is this
 
 We write out our whole `Tip` structure (because that's what the
 pattern is that we want to match) and the odd-looking thing for the
-`SlackData` is the `RecordWildCards` "GHC add-on" in play. We use it
-quite extensively in the Ludwig codebase so I thought I'd use it here as
+`SlackData` is the `RecordWildCards` "GHC add-on" in play. It is used
+quite extensively in a lot of codebases so I thought I'd use it here as
 well even though it's not really necessary for writing idiotmatic
 Haskell. What it does is automatically inject all the record names of
 `SlackData` as variables in our function, so without explicitly
