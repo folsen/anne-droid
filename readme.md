@@ -80,7 +80,7 @@ This project is set up to be deployed to heroku with the
 When you're deploying with Haskell you need to set the `SLACK_TOKEN`
 environment variable.
 
-    heroku config:set GITHUB_USERNAME=joesmith
+    heroku config:set SLACK_TOKEN=myslacktoken
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/folsen/anne-droid)
 
