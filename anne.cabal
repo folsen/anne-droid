@@ -5,7 +5,7 @@ name:                anne-droid
 version:             0.1.0.0
 synopsis:            Slack bot for learning Haskell
 -- description:
-license:             AllRightsReserved
+license:             MIT
 license-file:        LICENSE
 author:              Fredrik
 maintainer:          fredrik@dekompile.com

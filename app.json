@@ -1,6 +1,13 @@
 {
   "name": "Anne Droid",
   "description": "Slack bot for Haskell learning",
+  "logo": "https://halcyon.sh/logo.svg",
   "repository": "https://github.com/folsen/anne-droid",
-  "keywords": ["haskell", "scotty", "slack"]
+  "keywords": ["haskell", "scotty", "slack"],
+  "env": {
+    "BUILDPACK_URL": {
+      "description": "Heroku buildpack for deploying Haskell apps",
+      "value": "https://github.com/mietek/haskell-on-heroku"
+    }
+  }
 }

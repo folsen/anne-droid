@@ -50,6 +50,13 @@ To install the project you should
     cabal sandbox init
     cabal install -j
 
+Regardless of the build-method you choose, the first build will require
+you to download quite a lot of packages and building them so expect a
+10-15 minute install time the first time you build. Subsequent builds
+should be a lot faster. The main benefit of Halcyon is that it does a
+lot more advanced build-caching for you so you can expect a smoother
+experience deploying.
+
 You can also start a REPL with
 
     cabal repl
@@ -69,6 +76,11 @@ Deploying
 
 This project is set up to be deployed to heroku with the
 [haskell-on-heroku](https://haskellonheroku.com/) build pack.
+
+When you're deploying with Haskell you need to set the `SLACK_TOKEN`
+environment variable.
+
+    heroku config:set GITHUB_USERNAME=joesmith
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/folsen/anne-droid)
 
