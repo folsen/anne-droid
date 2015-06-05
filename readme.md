@@ -74,15 +74,25 @@ out of it and `:r` to reload our code.
 Deploying
 ---
 
-This project is set up to be deployed to heroku with the
+This project is set up to be deployed to heroku with Docker or Halcyon using the
 [haskell-on-heroku](https://haskellonheroku.com/) build pack.
 
-When you're deploying with Haskell you need to set the `SLACK_TOKEN`
+When you're deploying you need to set the `SLACK_TOKEN`
 environment variable.
 
     heroku config:set SLACK_TOKEN=myslacktoken
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/folsen/anne-droid)
+If you're deploying with Halcyon you will need to set up a private S3 repository
+and runt he first build on a dyno on its own (the first build takes too long
+for the default heroku build process, subsequent builds will be a lot faster
+and easier). To do all this, please follow the instructions on [Haskell on
+Heroku](https://haskellonheroku.com/tutorial/).
+
+If you are deploying with docker, you should be able to deploy following
+the instructions on ther [Heroku blog post](https://blog.heroku.com/archives/2015/5/5/introducing_heroku_docker_release_build_deploy_heroku_apps_with_docker) about Docker support.
+
+A Dockerfile that is tested to work with Heroku can be found in the root
+of the project.
 
 Extending
 ---
