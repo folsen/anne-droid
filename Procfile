@@ -1,1 +1,1 @@
-web: bin/anne-droid -p $PORT -t $SLACK_TOKEN
+web: /app/target/anne-droid -p 3000 -t $SLACK_TOKEN

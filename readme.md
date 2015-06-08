@@ -71,6 +71,9 @@ imported so you can for instance do something like
 to get a web server running in the REPL so that you can easily `ctrl-c`
 out of it and `:r` to reload our code.
 
+To make a test request to the server you can run the command found in
+the included `test` file.
+
 Deploying
 ---
 
@@ -93,6 +96,10 @@ the instructions on ther [Heroku blog post](https://blog.heroku.com/archives/201
 
 A Dockerfile that is tested to work with Heroku can be found in the root
 of the project.
+
+Running `heroku docker:start` should compile the whole application and
+start it in a docker instance for testing. `heroku docker:release`
+should then push up the compiled slug to Heroku and "just work".
 
 Extending
 ---

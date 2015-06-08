@@ -1,2 +1,1 @@
-curl -X POST http://localhost:3000/ -d
-'team_id=1&channel_id=1&channel_name=testchan&timestamp=123456&user_id=1&user_name=testuser&trigger_word=@anne&token=development&text=@anne help'
+curl -X POST http://localhost:3000/ -d 'team_id=1&channel_id=1&channel_name=testchan&timestamp=123456&user_id=1&user_name=testuser&trigger_word=@anne&token=development&text=@anne help'

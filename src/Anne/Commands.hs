@@ -69,8 +69,8 @@ handler :: SlackRequest -> IO SlackResponse
 -- available, this text needs to be updated as we expand.
 handler (SlackRequest Help _) =
   return . SuccessResponse $ mconcat
-  [ "There are currently no commands available :( "
-  , "Go add some in the github repo."
+  [ "Can't show Help because there are currently no commands available :( "
+  , "Go add some!"
   ]
 
 -- | This functions handles the CommandNotFound by creating a random number (an
